@@ -3,8 +3,11 @@
     align-items:center;
     height:10vh;
     background-color:#a40123;
-    color:white;
-    
+    color:white;    
+}
+
+.navBar a{
+    display:blocK;
 }
 
 .services{
@@ -13,10 +16,15 @@
     margin-left:20px;
     width:50%;
 }
+.services li a {
+    text-decoration: none;
+    color:white;
+}
 
 .services li{
     list-style: none;
     margin-left:30px;   
+    display:inline-block;
 }
 
 .login{
@@ -24,7 +32,18 @@
     display:flex;
     justify-content: flex-end;
     margin-right:10%;
+    align-items:center;
+    color:white;
+    text-decoration: none;
 }
 .login li{
     list-style: none;
+    font-size:18px;
 }
+
+.login img{
+    margin-left:10px;
+}
+
+/* Manejo del Click */
+
