@@ -4,9 +4,14 @@ import './NavBar.css';
 function NavBar(){
     return(
         <nav className='navBar'>
+            <ul className='services'>
+            <li><img></img></li>
             <li>¿Quienes somos?</li>
             <li>Servicios</li>
-            <li>Registrarse/Iniciar Sesión</li>
+            </ul>
+            <div className='login'>
+                <ul><li>Registrarse/Iniciar Sesión</li></ul>
+            </div>
         </nav>
     )
 }
