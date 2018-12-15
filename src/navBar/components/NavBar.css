@@ -3,8 +3,43 @@ a{
     text-decoration: none;
 }
 
+li {
+    list-style: none;
+}
 nav{
     background-color: #a40123;
+}
+.history {
+    margin-right:15vw;
+    margin-left:5vw;
+}
+
+.history a{
+    text-align: center;
+    display:inline-block;
+
+}
+nav ul{
     display:flex;
     align-items: center;
 }
+
+.subNav{
+    flex-direction: column;
+    position:absolute;
+    top:7.5vh;
+    background-color: #a40123;
+    margin:0;
+}
+
+.subNav li{
+    margin-bottom: 2vh;
+}
+
+.login{
+    position:relative;
+    right:-50vw;
+    display:flex;
+    align-items: center;
+}
+
