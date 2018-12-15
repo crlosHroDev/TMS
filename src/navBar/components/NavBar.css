@@ -1,49 +1,10 @@
-.navBar{
-    display:flex;
-    align-items:center;
-    height:10vh;
-    background-color:#a40123;
-    color:white;    
-}
-
-.navBar a{
-    display:blocK;
-}
-
-.services{
-    display:flex;
-    justify-content:flex-start;
-    margin-left:20px;
-    width:50%;
-}
-.services li a {
-    text-decoration: none;
-    color:white;
-}
-
-.services li{
-    list-style: none;
-    margin-left:30px;   
-    display:inline-block;
-}
-
-.login{
-    width:50%;
-    display:flex;
-    justify-content: flex-end;
-    margin-right:10%;
-    align-items:center;
+a{
     color:white;
     text-decoration: none;
 }
-.login li{
-    list-style: none;
-    font-size:18px;
+
+nav{
+    background-color: #a40123;
+    display:flex;
+    align-items: center;
 }
-
-.login img{
-    margin-left:10px;
-}
-
-/* Manejo del Click */
-

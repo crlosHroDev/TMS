@@ -3,26 +3,25 @@ import './NavBar.css';
 
 function NavBar(){
     return(
-        <nav className='navBar'>
-            <ul className='services'>
-            <li><img></img></li>
-            <li><a href=''>¿Quienes somos?</a>
-                <ul className='navSub1'>
-                    <li>Misión</li>
-                    <li>Visión</li>
-                    <li>Valores Coporativos</li>
+        <nav>
+            <ul>
+            <li>
+                <a href='#'>¿Quienes somos?</a>
+                <ul className='subNav'>
+                    <li><a href='#'>Misión</a></li>
+                    <li><a href='#'>Visión</a></li>
+                    <li><a href='#'>Valores Corporativos</a></li>
                 </ul>
             </li>
-            <li><a href=''>Servicios</a></li>
-            </ul>
-            <a href='' className='login'>
+            <li><a href='#'>Servicios</a></li>
             <div className='login'>
-                <li>Registrarse/Iniciar Sesión</li>
-                <img src="https://img.icons8.com/bubbles/50/000000/gender-neutral-user.png"></img>
+                <img src='https://img.icons8.com/bubbles/50/000000/gender-neutral-user.png'></img>
+                <li><a href='#'>Registrarme/Iniciar Sesión</a></li>
             </div>
-            </a>
+            </ul>
         </nav>
     )
 }
 
 export default NavBar;
+
