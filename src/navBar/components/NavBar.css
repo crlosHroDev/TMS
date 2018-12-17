@@ -18,7 +18,7 @@ nav {
   width: 100%;
 }
 #history {
-  margin-right: 15vw;
+  margin-right: 5vw;
   margin-left: 10vw;
   display: flex;
   align-items: center;
@@ -29,11 +29,16 @@ nav ul {
   display: flex;
   align-items: center;
 }
-
+.contact {
+  margin-left: 5vw;
+}
 #history:hover .subNav {
   display: flex;
 }
 
+nav ul li:hover > a {
+  background-color: #5d0013;
+}
 .subNav {
   display: none; /*ojo que cuando haga el hover pasa a display flex*/
   flex-direction: column;

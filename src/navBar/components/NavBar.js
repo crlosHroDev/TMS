@@ -27,6 +27,9 @@ function NavBar() {
         <li>
           <a href="#">Servicios</a>
         </li>
+        <li className="contact">
+          <a href="#">Contáctanos</a>
+        </li>
         <div className="login">
           <img src="https://img.icons8.com/bubbles/50/000000/gender-neutral-user.png" />
           <li>
