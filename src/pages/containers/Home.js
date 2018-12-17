@@ -3,6 +3,7 @@ import HomeLayout from "../components/Home-layout";
 import NavBarContainer from "../../navBar/containers/NavBar-Container";
 import Hero from "../../hero/components/hero";
 import Services from "../../services/components/Services";
+import ModalContainer from "../../widgets/containers/modal-container";
 
 class Home extends Component {
   render() {
@@ -11,6 +12,7 @@ class Home extends Component {
         <NavBarContainer />
         <Hero />
         <Services />
+        <ModalContainer />
       </HomeLayout>
     );
   }
