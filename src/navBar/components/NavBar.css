@@ -1,47 +1,61 @@
-a{
-    color:white;
-    text-decoration: none;
+a {
+  color: white;
+  text-decoration: none;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
-nav{
-    background-color: #a40123;
+nav {
+  background-color: #a40123;
+}
+
+.logo {
+  width: 100px;
+  margin-left: 20px;
+}
+.logo img {
+  width: 100%;
 }
 #history {
-    margin-right:15vw;
-    margin-left:5vw;
+  margin-right: 15vw;
+  margin-left: 10vw;
+  display: flex;
+  align-items: center;
+  height: 10vh;
 }
 
-#history a{
-    text-align: center;
-    display:inline-block;
-
-}
-nav ul{
-    display:flex;
-    align-items: center;
+nav ul {
+  display: flex;
+  align-items: center;
 }
 
-
-.subNav{
-    display:none;/*ojo que cuando haga el hover pasa a display flex*/
-    flex-direction: column;
-    position:absolute;
-    top:7.5vh;
-    background-color: #a40123;
-    margin:0;
+#history:hover .subNav {
+  display: flex;
 }
 
-.subNav li{
-    margin-bottom: 2vh;
+.subNav {
+  display: none; /*ojo que cuando haga el hover pasa a display flex*/
+  flex-direction: column;
+  position: absolute;
+  top: 10vh;
+  background-color: #a40123;
+  margin: 0;
 }
 
-.login{
-    position:relative;
-    right:-50vw;
-    display:flex;
-    align-items: center;
+.subNav li {
+  margin-bottom: 2vh;
+  width: 100%;
+  text-align: center;
 }
 
+.subNav li:hover {
+  background-color: #5d0013;
+}
+
+.login {
+  position: relative;
+  right: -40vw;
+  display: flex;
+  align-items: center;
+}

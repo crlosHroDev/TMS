@@ -1,0 +1,27 @@
+.services {
+  display: grid;
+  height: 20vh;
+  width: 100vw;
+  grid-template-columns: 25vw 25vw 25vw 25vw;
+  grid-template-rows: 10vh 10vh;
+  background: #fff;
+}
+
+.services div {
+  justify-self: center;
+  margin-top: 2vh;
+}
+.services img {
+  height: 10vh;
+}
+
+.services p {
+  text-align: center;
+}
+
+.services > p {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  align-self: center;
+  font-size: 30px;
+}

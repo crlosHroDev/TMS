@@ -1,0 +1,9 @@
+.hero {
+  height: 70vh;
+  width: 100vw;
+}
+
+.hero img {
+  height: 100%;
+  width: 100%;
+}
