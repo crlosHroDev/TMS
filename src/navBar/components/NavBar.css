@@ -9,12 +9,12 @@ li {
 nav{
     background-color: #a40123;
 }
-.history {
+#history {
     margin-right:15vw;
     margin-left:5vw;
 }
 
-.history a{
+#history a{
     text-align: center;
     display:inline-block;
 
@@ -24,7 +24,9 @@ nav ul{
     align-items: center;
 }
 
+
 .subNav{
+    display:none;/*ojo que cuando haga el hover pasa a display flex*/
     flex-direction: column;
     position:absolute;
     top:7.5vh;

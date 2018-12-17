@@ -1,13 +1,13 @@
 import React from 'react';
 import './NavBar.css';
-import image from '../../images/logo.jpg'
+import logo from '../../images/logo.jpg'
 
 function NavBar(){
     return(
         <nav>
             <ul>
-                <li><img src={Image}></img></li>
-                <li className='history'>
+                {/* <div className='logo'><img src={logo}></img></div> */}
+                <li id='history'>
                     <a href='#'>¿Quienes somos?</a>
                     <ul className='subNav'>
                         <li><a href='#'>Misión</a></li>
