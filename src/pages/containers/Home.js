@@ -4,6 +4,7 @@ import NavBarContainer from "../../navBar/containers/NavBar-Container";
 import Hero from "../../hero/components/hero";
 import Services from "../../services/components/Services";
 import ModalContainer from "../../widgets/containers/modal-container";
+import Modal from '../../widgets/components/modal'
 
 class Home extends Component {
   render() {
@@ -12,7 +13,10 @@ class Home extends Component {
         <NavBarContainer />
         <Hero />
         <Services />
-        <ModalContainer />
+        <ModalContainer>
+          <Modal/>
+        
+          </ModalContainer> 
       </HomeLayout>
     );
   }
