@@ -60,7 +60,7 @@ nav ul li:hover > a {
 
 .login {
   position: relative;
-  right: -40vw;
+  right: -30vw;
   display: flex;
   align-items: center;
 }
