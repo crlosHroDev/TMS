@@ -4,19 +4,38 @@ import NavBarContainer from "../../navBar/containers/NavBar-Container";
 import Hero from "../../hero/components/hero";
 import Services from "../../services/components/Services";
 import ModalContainer from "../../widgets/containers/modal-container";
-import Modal from '../../widgets/components/modal'
+import Modal from "../../widgets/components/modal";
 
 class Home extends Component {
+  state = {
+    handleModal: false
+  };
+
+  showModal = () => {
+    if (!this.state.handleModal) {
+      const modal = document.getElementById("modal");
+      modal.style.display = "flex";
+      this.setState({ handleModal: true });
+    }
+  };
+
+  hideModal = () => {
+    if (handleModal) {
+      const modal = document.getElementById("modal");
+      modal.style.display = "none";
+      this.setState({ handleModal: false });
+    }
+  };
+
   render() {
     return (
       <HomeLayout>
-        <NavBarContainer />
+        <NavBarContainer showModal={this.showModal} />
         <Hero />
         <Services />
         <ModalContainer>
-          <Modal/>
-        
-          </ModalContainer> 
+          <Modal hideModal={this.hideModal} />
+        </ModalContainer>
       </HomeLayout>
     );
   }

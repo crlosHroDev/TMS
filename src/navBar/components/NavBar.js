@@ -3,7 +3,7 @@ import "./NavBar.css";
 import logo from "../../images/logo.jpg";
 import truckLogo from "../../images/truck_logo.png";
 
-function NavBar() {
+function NavBar(props) {
   return (
     <nav>
       <ul>
@@ -30,7 +30,7 @@ function NavBar() {
         <li className="contact">
           <a href="#">Contáctanos</a>
         </li>
-        <div className="login">
+        <div className="login" onClick={props.showModal}>
           <img src="https://img.icons8.com/bubbles/50/000000/gender-neutral-user.png" />
           <li>
             <a href="#">Registrarme/Iniciar Sesión</a>

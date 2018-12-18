@@ -1,6 +1,85 @@
-.modal{
-    width:50vw;
-    height:100vh;
-    background-color:blue;
-    
+#modal {
+  width: 20vw;
+  height: 50vh;
+  background-color: #a40123;
+  border-radius: 10px;
+  display: flex; /*aqui iria display flex*/
+  position: fixed;
+  z-index: 2;
+  top: 25vh;
+  left: 35vw;
+}
+form {
+  width: 20vw;
+  height: 50vh;
+  position: absolute;
+}
+
+.inputGrid {
+  display: grid;
+  grid-template-columns: 30% 50%;
+  grid-template-rows: 50% 50%;
+  grid-row-gap: 2vh;
+}
+
+.subItem1,
+.subItem3 {
+  justify-self: center;
+  color: #fff;
+}
+#btn {
+  margin-left: 60%;
+  margin-top: 20%;
+}
+
+.tmsIcon {
+  height: 15vh;
+  position: relative;
+  left: 7vw;
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+}
+
+.tmsIcon img {
+  height: 100%;
+}
+
+#btn {
+  border-radius: 40px;
+  background: #41000d;
+  color: #fff;
+  box-shadow: 0 6px #5d0013;
+  border: none;
+  cursor: pointer;
+  padding: 15px 30px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  /* top: -5vh;
+  left: -0.5vw; */
+  text-align: center;
+}
+
+.closeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #f5f5f5;
+  border-radius: 50%;
+  color: #f5f5f5;
+  text-align: center;
+  text-decoration: none;
+  background: #464646;
+  box-shadow: 0 0 3px gray;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.closeButton:hover {
+  background: #262626;
 }
