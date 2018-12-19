@@ -1,12 +1,14 @@
 import React from "react";
 import "./modal.css";
-import tmsIcon from "../../images/tms_icon.png";
+import tmsIcon from "../../images/tms-icon.png";
 
 function Modal(props) {
   return (
     <div id="modal">
       <form>
-        <button className="closeButton">X</button>
+        <button className="closeButton" onClick={props.hideModal}>
+          X
+        </button>
         <figure className="tmsIcon">
           <img src={tmsIcon} />
         </figure>

@@ -63,4 +63,9 @@ nav ul li:hover > a {
   right: -30vw;
   display: flex;
   align-items: center;
+  transition: all ease-in-out 300ms;
+}
+
+.login:hover {
+  transform: translate(0px, 8px) scale(1.4);
 }

@@ -3,7 +3,7 @@
   height: 50vh;
   background-color: #a40123;
   border-radius: 10px;
-  display: flex; /*aqui iria display flex*/
+  display: none; /*aqui iria display flex*/
   position: fixed;
   z-index: 2;
   top: 25vh;
@@ -48,7 +48,6 @@ form {
   border-radius: 40px;
   background: #41000d;
   color: #fff;
-  box-shadow: 0 6px #5d0013;
   border: none;
   cursor: pointer;
   padding: 15px 30px;
@@ -56,10 +55,17 @@ form {
   text-transform: uppercase;
   font-weight: 700;
   outline: none;
-  position: relative;
+  position: absolute;
+  right: 30%;
+  box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+  transition: all ease-in-out 50ms;
   /* top: -5vh;
   left: -0.5vw; */
-  text-align: center;
+}
+
+#btn:active {
+  box-shadow: 0px 37px 20px -20px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, 5px) scale(1.2);
 }
 
 .closeButton {

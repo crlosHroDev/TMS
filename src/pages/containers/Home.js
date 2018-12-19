@@ -20,7 +20,7 @@ class Home extends Component {
   };
 
   hideModal = () => {
-    if (handleModal) {
+    if (this.state.handleModal) {
       const modal = document.getElementById("modal");
       modal.style.display = "none";
       this.setState({ handleModal: false });
