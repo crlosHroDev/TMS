@@ -1,5 +1,5 @@
 #modal {
-  width: 20vw;
+  width: 25vw;
   height: 50vh;
   background-color: #a40123;
   border-radius: 10px;
@@ -17,15 +17,26 @@ form {
 
 .inputGrid {
   display: grid;
-  grid-template-columns: 30% 50%;
+  grid-template-columns: 30% 70%;
   grid-template-rows: 50% 50%;
-  grid-row-gap: 2vh;
+  grid-gap: 2vh 3vw;
 }
 
 .subItem1,
 .subItem3 {
   justify-self: center;
   color: #fff;
+}
+
+.subItem1 p,
+.subItem3 p{
+  margin-left:30px;
+
+}
+
+.inputGrid input{
+  width:100%;
+  justify-self: center;
 }
 #btn {
   margin-left: 60%;
@@ -35,7 +46,7 @@ form {
 .tmsIcon {
   height: 15vh;
   position: relative;
-  left: 7vw;
+  left: 10vw;
   margin-bottom: 5vh;
   margin-top: 5vh;
 }
@@ -50,13 +61,13 @@ form {
   color: #fff;
   border: none;
   cursor: pointer;
-  padding: 15px 30px;
+  padding: 10px 20px;
   display: inline-block;
   text-transform: uppercase;
   font-weight: 700;
   outline: none;
   position: absolute;
-  right: 30%;
+  right: 20%;
   box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
   transition: all ease-in-out 50ms;
   /* top: -5vh;
@@ -71,7 +82,7 @@ form {
 .closeButton {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -5vw;
   cursor: pointer;
   width: 40px;
   height: 40px;

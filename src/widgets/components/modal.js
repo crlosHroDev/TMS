@@ -13,11 +13,11 @@ function Modal(props) {
           <img src={tmsIcon} />
         </figure>
         <div className="inputGrid">
-          <div className="subItem1">Usuario:</div>
+          <div className="subItem1"><p>Usuario:</p></div>
           <div className="subItem2">
             <input type="text" />
           </div>
-          <div className="subItem3">Contraseña:</div>
+          <div className="subItem3"><p>Contraseña:</p></div>
           <div className="subItem4">
             <input type="text" />
           </div>
