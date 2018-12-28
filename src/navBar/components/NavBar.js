@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 import "./NavBar.css";
 import logo from "../../images/logo.jpg";
 import truckLogo from "../../images/truck_logo.png";
@@ -11,29 +12,29 @@ function NavBar(props) {
           <img src={truckLogo} />
         </figure>
         <li id="history">
-          <a href="#">¿Quienes somos?</a>
+          <Link to="/historia">¿Quienes somos?</Link>
           <ul className="subNav">
             <li>
-              <a href="#">Misión</a>
+              <Link to="/mision">Misión</Link>
             </li>
             <li>
-              <a href="#">Visión</a>
+              <Link to="/vision">Visión</Link>
             </li>
             <li>
-              <a href="#">Valores Corporativos</a>
+              <Link to="/valores">Valores Corporativos</Link>
             </li>
           </ul>
         </li>
         <li>
-          <a href="#">Servicios</a>
+          <Link to="/servicios">Servicios</Link>
         </li>
         <li className="contact">
-          <a href="#">Contáctanos</a>
+          <Link to="/contacto">Contáctanos</Link>
         </li>
         <div className="login" onClick={props.showModal}>
           <img src="https://img.icons8.com/bubbles/50/000000/gender-neutral-user.png" />
           <li>
-            <a href="#">Registrarme/Iniciar Sesión</a>
+            <Link to="/registro">Registrarme/Iniciar Sesión</Link>
           </li>
         </div>
       </ul>

@@ -22,7 +22,7 @@ function Modal(props) {
             <input type="text" />
           </div>
         </div>
-        <button type="button" id="btn">
+        <button type="button" id="btn" >
           Login
         </button>
       </form>

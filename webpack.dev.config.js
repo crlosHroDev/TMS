@@ -3,8 +3,7 @@ const path=require ('path');
 module.exports={
   mode:'development',
   entry:{
-    'home':path.resolve(__dirname,'entry/js/home.js'),
-    'tms':path.resolve(__dirname,'entry/js/tms.js')
+    'app':path.resolve(__dirname,'entry/js/app.js')
   },
   output:{
     path:path.resolve(__dirname,'dist'),

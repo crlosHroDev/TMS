@@ -1,10 +1,10 @@
 import React,{Component} from 'react';
 
-class TMS extends {Component}{
+class TMS extends Component{
     render(){
         return(
-            <div>Aqui comienza el portal TMS</div>
-        )      
+            <p>Aqui va a ir el TMS</p>
+        )
     }
 }
 

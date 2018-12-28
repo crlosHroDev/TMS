@@ -15,8 +15,7 @@ let config = {
     minimizer: [new UglifyJsPlugin(), new OptimizeCSSAssetsPlugin({})]
   },
   entry: {
-    home: path.resolve(__dirname, "entry/js/home.js"),
-    tms: path.resolve(__dirname, "entry/js/tms.js")
+    home: path.resolve(__dirname, "entry/js/app.js")
   },
   output: {
     path: path.resolve(__dirname, "dist"),

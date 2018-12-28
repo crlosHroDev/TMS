@@ -5,6 +5,7 @@ import Hero from "../../hero/components/hero";
 import Services from "../../services/components/Services";
 import ModalContainer from "../../widgets/containers/modal-container";
 import Modal from "../../widgets/components/modal";
+import TMS from './tms';
 
 class Home extends Component {
   state = {
@@ -29,14 +30,14 @@ class Home extends Component {
 
   render() {
     return (
-      <HomeLayout>
-        <NavBarContainer showModal={this.showModal} />
-        <Hero />
-        <Services />
-        <ModalContainer>
-          <Modal hideModal={this.hideModal} />
-        </ModalContainer>
-      </HomeLayout>
+        <HomeLayout>
+          <NavBarContainer showModal={this.showModal} />
+          <Hero />
+          <Services />
+          <ModalContainer>
+            <Modal hideModal={this.hideModal} />
+          </ModalContainer>
+        </HomeLayout>
     );
   }
 }
