@@ -4,7 +4,7 @@ import tmsIcon from "../../images/tms-icon.png";
 
 function Modal(props) {
   return (
-    <div id="modal">
+    <div className="modal modalClose">
       <form>
         <button className="closeButton" onClick={props.hideModal}>
           X

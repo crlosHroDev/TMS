@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import HomeLayout from "../components/Home-layout";
-import NavBarContainer from "../../navBar/containers/NavBar-Container";
+import NavBar from "../../navBar/components/NavBar";
 import Hero from "../../hero/components/hero";
 import Services from "../../services/components/Services";
 import ModalContainer from "../../widgets/containers/modal-container";
@@ -9,34 +9,31 @@ import TMS from './tms';
 
 class Home extends Component {
   state = {
-    handleModal: false
+    modalVisible: false
   };
-  showModal = () => {
-    if (!this.state.handleModal) {
-      const modal = document.getElementById("modal");
-      modal.style.display = "flex";
-      this.setState({ handleModal: true });
-    }
-  };
-
-  hideModal = () => {
-    if (this.state.handleModal) {
-      const modal = document.getElementById("modal");
-      modal.style.display = "none";
-      this.setState({ handleModal: false });
-    }
-  };
-  
+  hideModal=(event)=>{
+    this.setState({
+      modalVisible:false,
+    })
+  }
+  showModal=()=>{
+    this.setState({
+      modalVisible:true,
+    })
+  }
 
   render() {
     return (
         <HomeLayout>
-          <NavBarContainer showModal={this.showModal} />
+          <NavBar showModal={this.showModal} />
           <Hero />
           <Services />
+          {
+            this.state.modalVisible &&
           <ModalContainer>
             <Modal hideModal={this.hideModal} />
           </ModalContainer>
+          }
         </HomeLayout>
     );
   }

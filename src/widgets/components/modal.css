@@ -1,14 +1,15 @@
-#modal {
+.modal {
   width: 25vw;
   height: 50vh;
   background-color: #a40123;
   border-radius: 10px;
-  display: none; /*aqui iria display flex*/
+  display: flex; /*aqui iria display flex*/
   position: fixed;
   z-index: 2;
   top: 25vh;
   left: 35vw;
 }
+
 form {
   width: 20vw;
   height: 50vh;
