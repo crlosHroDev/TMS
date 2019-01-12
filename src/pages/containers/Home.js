@@ -11,7 +11,6 @@ class Home extends Component {
   state = {
     handleModal: false
   };
-
   showModal = () => {
     if (!this.state.handleModal) {
       const modal = document.getElementById("modal");
@@ -27,6 +26,7 @@ class Home extends Component {
       this.setState({ handleModal: false });
     }
   };
+  
 
   render() {
     return (

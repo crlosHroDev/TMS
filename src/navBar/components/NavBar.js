@@ -34,7 +34,7 @@ function NavBar(props) {
         <div className="login" onClick={props.showModal}>
           <img src="https://img.icons8.com/bubbles/50/000000/gender-neutral-user.png" />
           <li>
-            <Link to="/registro">Registrarme/Iniciar Sesión</Link>
+            <a href='#'>Registrarme/Iniciar Sesión</a>
           </li>
         </div>
       </ul>
