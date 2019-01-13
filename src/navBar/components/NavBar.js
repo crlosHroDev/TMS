@@ -5,6 +5,7 @@ import logo from "../../images/logo.jpg";
 import truckLogo from "../../images/truck_logo.png";
 
 function NavBar(props) {
+  
   return (
     <nav>
       <ul>

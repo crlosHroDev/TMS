@@ -1,37 +1,21 @@
 import React, { Component } from "react";
+import {connect} from 'react-redux';
 import HomeLayout from "../components/Home-layout";
-import NavBar from "../../navBar/components/NavBar";
 import Hero from "../../hero/components/hero";
 import Services from "../../services/components/Services";
 import ModalContainer from "../../widgets/containers/modal-container";
 import Modal from "../../widgets/components/modal";
-import TMS from './tms';
 
 class Home extends Component {
-  state = {
-    modalVisible: false
-  };
-  hideModal=(event)=>{
-    this.setState({
-      modalVisible:false,
-    })
-  }
-  showModal=()=>{
-    this.setState({
-      modalVisible:true,
-    })
-  }
-
   render() {
     return (
         <HomeLayout>
-          <NavBar showModal={this.showModal} />
           <Hero />
           <Services />
           {
-            this.state.modalVisible &&
+            this.props.modalVisible &&
           <ModalContainer>
-            <Modal hideModal={this.hideModal} />
+            <Modal />
           </ModalContainer>
           }
         </HomeLayout>
@@ -39,4 +23,10 @@ class Home extends Component {
   }
 }
 
-export default Home;
+function mapStateToProps(state,props){
+  return{
+    modalVisible:state.get('modalVisible')
+  }
+}
+
+export default connect(mapStateToProps)(Home);

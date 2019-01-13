@@ -14,6 +14,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var app = (0, _express.default)();
 app.use(_express.default.static('dist'));
+app.use('/images', _express.default.static('images'));
 app.get('*', function (req, res) {
   var html = _server.default.renderToString(_react.default.createElement(_reactRouter.StaticRouter, {
     location: req.url,

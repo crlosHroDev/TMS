@@ -1,15 +1,24 @@
 import React, { Component } from "react";
-import { createPortal } from "react-dom";
+import {connect} from 'react-redux';
+import Modal from '../components/modal';
 
 class ModalContainer extends Component {
-
+  hideModal=()=>{
+    this.props.dispatch({
+      type:'CLOSE_MODAL'
+    })
+  }
   render() {
-    return createPortal(
-      this.props.children,
-      document.getElementById("modal-container")
-    );
+    return(
+      <Modal hideModal={this.hideModal}/>
+    )
   }
 }
 
+function mapStateToProps(state,props){
+  return{
+    modalVisible:state.get('modalVisible')
+  }
+}
 
-export default ModalContainer;
+export default connect(mapStateToProps)(ModalContainer);

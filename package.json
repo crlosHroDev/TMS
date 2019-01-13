@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:local":"webpack --env.NODE_ENV=local",
+    "build:local": "webpack --env.NODE_ENV=local",
     "build:dev": "webpack-dev-server --config ./webpack.dev.config.js",
     "build:server": "webpack --env.NODE_ENV=local --config ./webpack.server.config.js",
     "server": "babel-node dist/server.js --presets @babel/preset-react,@babel/preset-env",
@@ -50,10 +50,14 @@
   "dependencies": {
     "@babel/runtime": "^7.1.5",
     "express": "4.16.4",
+    "immutable": "^4.0.0-rc.12",
     "prop-types": "15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-redux": "^6.0.0",
     "react-router": "4.3.1",
-    "react-router-dom": "4.3.1"
+    "react-router-dom": "4.3.1",
+    "redux": "^4.0.1",
+    "redux-immutable": "^4.0.0"
   }
 }
