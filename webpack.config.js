@@ -7,7 +7,7 @@ const CleanWebPackPlugin = require("clean-webpack-plugin");
 let config = {
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "./css/[name].[hash].css",
+      filename: "./css/[name].css",
       chunkFilename: "[id].[chunkhash].css"
     })
   ],
@@ -15,12 +15,12 @@ let config = {
     minimizer: [new UglifyJsPlugin(), new OptimizeCSSAssetsPlugin({})]
   },
   entry: {
-    home: path.resolve(__dirname, "entry/js/app.js")
+    app: path.resolve(__dirname, "entry/js/app.js")
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "js/[name].[hash].js",
-    publicPath: path.resolve(__dirname, "dist") + "/",
+    filename: "js/[name].js",
+    publicPath: "/",
     chunkFilename: "js/[id].[chunkhash].js"
   },
   module: {

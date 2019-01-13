@@ -3,7 +3,6 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CleanWebPackPlugin = require("clean-webpack-plugin");
-const nodeExternals=require('webpack-node-externals');
 
 let config = {
   plugins: [
@@ -26,7 +25,6 @@ let config = {
     libraryTarget:'commonjs2'
   },
   target:"node",
-  externals:[nodeExternals()],
   module: {
     rules: [
       {

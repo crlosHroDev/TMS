@@ -101,3 +101,7 @@ form {
 .closeButton:hover {
   background: #262626;
 }
+
+.login a {
+  cursor:pointer;
+}

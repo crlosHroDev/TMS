@@ -11,7 +11,7 @@ class App extends Component{
             <Fragment>
                 <Route exact path='/' component={Home}/>
                 <Route exact path='/servicios' component={Services}/>
-                <Route exact path='/TMS' component={TMS}/>
+                <Route exact path='/login' component={TMS}/>
             </Fragment>
         )
     }
