@@ -37,6 +37,7 @@
     "file-loader": "2.0.0",
     "mini-css-extract-plugin": "0.4.5",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "redux-devtools-extension": "^2.13.7",
     "style-loader": "0.23.1",
     "stylus": "0.54.5",
     "stylus-loader": "3.0.2",
@@ -58,6 +59,7 @@
     "react-router": "4.3.1",
     "react-router-dom": "4.3.1",
     "redux": "^4.0.1",
-    "redux-immutable": "^4.0.0"
+    "redux-immutable": "^4.0.0",
+    "redux-logger": "^3.0.6"
   }
 }

@@ -1,8 +1,10 @@
 import React,{Fragment,Component} from 'react';
 import {Route,Switch} from 'react-router-dom';
-import {createStore} from 'redux';
+import {createStore,applyMiddleware, compose} from 'redux';
 import {Provider} from 'react-redux';
 import {Map as map} from 'immutable';
+import {composeWithDevTools} from 'redux-devtools-extension';
+import logger from 'redux-logger';
 import Home from './home';
 import Services from './services';
 import TMS from './tms';
@@ -12,7 +14,9 @@ import reducer from '../../reducers/modal';
 const store=createStore(
     reducer,
     map(),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    composeWithDevTools(
+        applyMiddleware(logger)
+    )
 )
 console.log(store.getState())
 

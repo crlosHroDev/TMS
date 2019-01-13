@@ -31,7 +31,6 @@ app.get('*',(req,res)=>{
       </head>
       <body>
         <div id="home-container">${html}</div>
-        <div id="modal-container"></div>
         <script src="/js/app.js"></script>
       </body>
     </html>
