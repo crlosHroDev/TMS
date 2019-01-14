@@ -1,0 +1,22 @@
+.serviceHero{
+    display:grid;
+    grid-template: 50vh 50vh/1fr 1fr;
+    border:1px red solid;
+    align-items: center;
+}
+
+.col-1{
+    grid-column:1/2;
+    height:100%;
+    align-self: center;
+    justify-self: center;
+}
+
+.tracking{
+    height:100%;
+    overflow: hidden;
+}
+
+.tracking img{
+    height:100%;
+}
