@@ -9,7 +9,7 @@ import Home from './home';
 import Services from './services';
 import TMS from './tms';
 import NavBarContainer from '../../navBar/containers/NavBarContainer';
-import reducer from '../../reducers/modal';
+import reducer from '../../reducers/index';
 
 const store=createStore(
     reducer,

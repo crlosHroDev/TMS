@@ -19,7 +19,7 @@ class NavBarContainer extends Component {
 
 function mapStateToProps(state,props){
     return{
-      modalVisible:state.get('modalVisible')
+      modal:state.get('modal')
     }
   }
 export default connect(mapStateToProps)(NavBarContainer);

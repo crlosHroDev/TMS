@@ -4,14 +4,14 @@ import HomeLayout from "../components/Home-layout";
 import Hero from "../../hero/components/hero";
 import ModalContainer from "../../widgets/containers/modal-container";
 import Modal from "../../widgets/components/modal";
-import Services from '../../services/components/Services';
+// import Services from '../../services/components/Services';
 
 class Home extends Component {
   render() {
     return (
         <HomeLayout>
-          <Hero />
-          <Services/>
+            <Hero />
+          {/* <Services/> */}
           {
             this.props.modalVisible &&
           <ModalContainer>
@@ -25,7 +25,7 @@ class Home extends Component {
 
 function mapStateToProps(state,props){
   return{
-    modalVisible:state.get('modalVisible')
+    modalVisible:state.get('modal').get('modalVisible')
   }
 }
 

@@ -12,9 +12,12 @@ function NavBar(props) {
         <figure className="logo">
           <img src={truckLogo} />
         </figure>
-        <li id="history">
-          <Link to="/historia">¿Quienes somos?</Link>
-          <ul className="subNav">
+        <li id='services'>
+          <Link to="/servicios">Servicios</Link>
+        </li>
+        <li>
+          <a href='#'>Clientes</a>
+          {/* <ul className="subNav">
             <li>
               <Link to="/mision">Misión</Link>
             </li>
@@ -24,13 +27,10 @@ function NavBar(props) {
             <li>
               <Link to="/valores">Valores Corporativos</Link>
             </li>
-          </ul>
-        </li>
-        <li>
-          <Link to="/servicios">Servicios</Link>
+          </ul> */}
         </li>
         <li className="contact">
-          <Link to="/contacto">Contáctanos</Link>
+          <Link to="/contacto">Trabaja con Nosotros!</Link>
         </li>
         <div className="login" onClick={props.showModal}>
           <img src="https://img.icons8.com/bubbles/50/000000/gender-neutral-user.png" />

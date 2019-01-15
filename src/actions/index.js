@@ -9,6 +9,11 @@
         return{
             type:'CLOSE_MODAL'
         }
+    },
+    nextPage: function nextPage(){
+        return{
+            type:counter
+        }
     }
  }
  

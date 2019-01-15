@@ -7,7 +7,7 @@ li {
   list-style: none;
 }
 nav {
-  background-color: #a40123;
+  background-image: url('../../images/blueBackground.jpg');
 }
 
 .logo {
@@ -17,7 +17,7 @@ nav {
 .logo img {
   width: 100%;
 }
-#history {
+#services {
   margin-right: 5vw;
   margin-left: 10vw;
   display: flex;
@@ -37,14 +37,14 @@ nav ul {
 }
 
 nav ul li:hover > a {
-  background-color: #5d0013;
+  font-weight: bold;
 }
 .subNav {
   display: none; /*ojo que cuando haga el hover pasa a display flex*/
   flex-direction: column;
   position: absolute;
   top: 10vh;
-  background-color: #a40123;
+  background-image: url('../../images/blueBackground.jpg');
   margin: 0;
 }
 
@@ -55,7 +55,7 @@ nav ul li:hover > a {
 }
 
 .subNav li:hover {
-  background-color: #5d0013;
+  font-weight: bold;
 }
 
 .login {
