@@ -9,9 +9,10 @@ function NavBar(props) {
   return (
     <nav>
       <ul>
-        <figure className="logo">
+        <Link to ='/'><figure className="logo">
           <img src={truckLogo} />
         </figure>
+        </Link>
         <li id='services'>
           <Link to="/servicios">Servicios</Link>
         </li>
