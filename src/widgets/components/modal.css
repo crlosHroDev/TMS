@@ -1,7 +1,7 @@
 .modal {
   width: 25vw;
-  height: 50vh;
-  background-color: #a40123;
+  height: 60vh;
+  background-color: #085188;
   border-radius: 10px;
   display: flex; /*aqui iria display flex*/
   position: fixed;

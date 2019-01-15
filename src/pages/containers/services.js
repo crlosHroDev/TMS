@@ -20,7 +20,7 @@ class Services extends Component{
 }
 function mapStateToProps(state,props){
     return{
-      modalVisible:state.get('modalVisible')
+      modalVisible:state.get('modal').get('modalVisible')
     }
   }
   

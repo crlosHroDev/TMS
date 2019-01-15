@@ -1,10 +1,10 @@
 import React from "react";
 import "./modal.css";
-import tmsIcon from "../../images/tms-icon.png";
+import tmsIcon from "../../images/delivery-softIcon.png";
 
 function Modal(props) {
   return (
-    <div className="modal modalClose">
+    <div className="modal">
       <form>
         <button className="closeButton" onClick={props.hideModal}>
           X
