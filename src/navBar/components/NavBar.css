@@ -6,7 +6,7 @@ a {
 li {
   list-style: none;
 }
-nav {
+.navBar {
   background-image: url('../../images/blueBackground.jpg');
 }
 
@@ -25,7 +25,7 @@ nav {
   height: 10vh;
 }
 
-nav ul {
+.navBar ul {
   display: flex;
   align-items: center;
 }
@@ -36,7 +36,7 @@ nav ul {
   display: flex;
 }
 
-nav ul li:hover > a {
+.navBar ul li:hover > a {
   font-weight: bold;
 }
 .subNav {

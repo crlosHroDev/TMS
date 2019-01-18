@@ -7,7 +7,7 @@ import truckLogo from "../../images/truck_logo.png";
 function NavBar(props) {
   
   return (
-    <nav>
+    <nav className='navBar'>
       <ul>
         <Link to ='/'><figure className="logo">
           <img src={truckLogo} />
