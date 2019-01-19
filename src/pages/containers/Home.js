@@ -4,6 +4,7 @@ import HomeLayout from "../components/Home-layout";
 import Hero from "../../hero/components/hero";
 import ModalContainer from "../../widgets/containers/modal-container";
 import Modal from "../../widgets/components/modal";
+import ErrorBoundary from '../../error/container/error';
 // import Services from '../../services/components/Services';
 
 class Home extends Component {
@@ -14,9 +15,11 @@ class Home extends Component {
           {/* <Services/> */}
           {
             this.props.modalVisible &&
-          <ModalContainer>
-            <Modal />
-          </ModalContainer>
+          <ErrorBoundary>
+            <ModalContainer>
+              <Modal />
+            </ModalContainer>
+          </ErrorBoundary>  
           }
         </HomeLayout>
     );
@@ -25,7 +28,8 @@ class Home extends Component {
 
 function mapStateToProps(state,props){
   return{
-    modalVisible:state.get('modal').get('modalVisible')
+    modalVisible:state.get('modal').get('modalVisible'),
+    hide:state.get('hide')
   }
 }
 
