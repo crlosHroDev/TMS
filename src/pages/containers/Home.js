@@ -29,7 +29,9 @@ class Home extends Component {
 function mapStateToProps(state,props){
   return{
     modalVisible:state.get('modal').get('modalVisible'),
-    hide:state.get('hide')
+    hide:state.get('modal').get('hide'),
+    login:state.get('modal').get('login'),
+    signUpActive:state.get('modal').get('signUpActive')    
   }
 }
 

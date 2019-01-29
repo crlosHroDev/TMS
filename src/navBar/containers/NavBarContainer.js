@@ -19,7 +19,10 @@ class NavBarContainer extends Component {
 
 function mapStateToProps(state,props){
     return{
-      modal:state.get('modal')
-    }
+        modalVisible:state.get('modal').get('modalVisible'),
+        hide:state.get('modal').get('hide'),
+        login:state.get('modal').get('login'),
+        menuActive:state.get('modal').get('menuActive')
+        }
   }
 export default connect(mapStateToProps)(NavBarContainer);

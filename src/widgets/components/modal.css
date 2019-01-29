@@ -19,6 +19,7 @@
   background-color: #ffffff;
   display:grid;
   grid-template-rows:100%;
+  border-radius: 10px;
 }
 .loginSignup{
   grid-column:1/2;
@@ -27,23 +28,30 @@
   background-color: #ffffff;
   display:inherit;
   grid-template-rows:5vh;
+  border-radius: 10px;
 }
 
 .loginmodal{
   display:inline-block;
   text-align: center;
   height:5vh;
-  background-color: #d2d8d8;
   grid-column:1/3;
+  /* border-radius: 10px; */
+  /* color:#343642; */
+
 }
 .signUp{
   display:inline-block;
   height:5vh;
   text-align: center;
-  background-color: #ffffff;
   grid-column:3/5;
 }
 
+.signUp a,.loginmodal a{
+  color:#343642;
+}
+
+/* SIGN UP FORM */
 .signupForm{
   grid-row:3/4;
   grid-column:1/5;
@@ -141,4 +149,67 @@
 
 .login a {
   cursor:pointer;
+}
+
+/* SIGN IN FORM */
+
+.signinForm{
+  grid-row:3/4;
+  grid-column:1/5;
+  display:inherit;
+  grid-template-columns: inherit;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-row-gap:40%;
+}
+
+.cd-email-login{
+  background-image:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-email.svg');
+  justify-self: center;
+  align-self: center;
+  grid-column:1/2;
+  grid-row:2/3;
+}
+
+.cd-password-login{
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-password.svg');
+  justify-self: center;
+  align-self: center;
+  grid-column:1/2;
+  grid-row:3/4;
+}
+
+.Email-login{
+  grid-column:2/4;
+  grid-row:2/3;
+  font-size:14px;
+}
+
+.password-login{
+  grid-column: 2/4;
+  grid-row:3/4;
+  font-size:14px;
+}
+
+.hidePasswordLogin{
+  display:inline-block;
+  font-size:14px;
+  border-left:1px solid #d2d8d8;
+  color:#343642;
+  grid-column: 4/5;
+  grid-row:3/4;
+  margin-left:5%;
+}
+.rememberMe{
+  grid-column:2/5;
+  grid-row:4/5;
+  font-size:14px;
+  color:#343642;
+
+}
+
+#remember-me{
+  grid-column: 1/2;
+  grid-row:4/5;
+  justify-self: center;
+  align-self: center;
 }
