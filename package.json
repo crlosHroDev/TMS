@@ -1,7 +1,6 @@
 {
   "name": "tms",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -28,7 +27,6 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-stage-0": "^7.0.0",
     "@babel/preset-stage-3": "^7.0.0",
-    "babel-cli": "^6.26.0",
     "babel-loader": "8.0.4",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "clean-webpack-plugin": "0.1.19",
@@ -61,5 +59,6 @@
     "redux": "^4.0.1",
     "redux-immutable": "^4.0.0",
     "redux-logger": "^3.0.6"
-  }
+  },
+  "description": ""
 }
