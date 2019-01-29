@@ -8,9 +8,16 @@ import ErrorBoundary from '../../error/container/error';
 // import Services from '../../services/components/Services';
 
 class Home extends Component {
+   closeModal=(e)=>{
+    e.stopPropagation()
+    this.props.dispatch({
+      type:'CLOSE_MODAL'
+    })
+  }
+
   render() {
     return (
-        <HomeLayout>
+        <HomeLayout closeModal={this.closeModal}>
             <Hero />
           {/* <Services/> */}
           {
