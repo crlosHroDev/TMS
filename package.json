@@ -28,7 +28,6 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-stage-0": "^7.0.0",
     "@babel/preset-stage-3": "^7.0.0",
-    "babel-cli": "^6.26.0",
     "babel-loader": "8.0.4",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "clean-webpack-plugin": "0.1.19",
