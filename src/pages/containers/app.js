@@ -5,9 +5,9 @@ import {Provider} from 'react-redux';
 import {Map as map} from 'immutable';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import logger from 'redux-logger';
-import Home from './home';
-import Services from './services';
-import TMS from './tms';
+import Home from './home.js';
+import Services from './services.js';
+import TMS from './tms.js';
 import NavBarContainer from '../../navBar/containers/NavBarContainer';
 import reducer from '../../reducers/index';
 
