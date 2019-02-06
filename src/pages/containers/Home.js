@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux';
+import ReactDOM from 'react-dom'
 import HomeLayout from "../components/Home-layout";
 import Hero from "../../hero/components/hero";
 import ModalContainer from "../../widgets/containers/modal-container";
@@ -8,23 +9,20 @@ import ErrorBoundary from '../../error/container/error';
 // import Services from '../../services/components/Services';
 
 class Home extends Component {
-   closeModal=(e)=>{
-    e.stopPropagation()
-    this.props.dispatch({
-      type:'CLOSE_MODAL'
-    })
+  
+  handleClickSection=(e)=>{
+    return e.target
   }
-
   render() {
     return (
-        <HomeLayout closeModal={this.closeModal}>
+        <HomeLayout onClick={this.handleClickSection}>
             <Hero />
           {/* <Services/> */}
           {
             this.props.modalVisible &&
           <ErrorBoundary>
-            <ModalContainer>
-              <Modal />
+            <ModalContainer  >
+              <Modal handleClickSection={this.handleClickSection} />
             </ModalContainer>
           </ErrorBoundary>  
           }

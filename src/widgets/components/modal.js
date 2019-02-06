@@ -3,6 +3,7 @@ import "./modal.css";
 
 function Modal(props) {
   // debugger;
+
   return (
     <div className="modal">
         <nav className='navModal'>
