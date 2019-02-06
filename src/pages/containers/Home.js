@@ -10,9 +10,6 @@ import ErrorBoundary from '../../error/container/error';
 
 class Home extends Component {
   
-  handleClickSection=(e)=>{
-    return e.target
-  }
   render() {
     return (
         <HomeLayout onClick={this.handleClickSection}>
@@ -21,9 +18,7 @@ class Home extends Component {
           {
             this.props.modalVisible &&
           <ErrorBoundary>
-            <ModalContainer  >
-              <Modal handleClickSection={this.handleClickSection} />
-            </ModalContainer>
+            <ModalContainer/>
           </ErrorBoundary>  
           }
         </HomeLayout>
