@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from 'react-dom'
 import {connect} from 'react-redux';
 import Modal from '../components/modal';
+import FormContainer from '../../Forms/containers/Form';
 
 class ModalContainer extends Component { 
   constructor(props){
@@ -29,13 +30,6 @@ class ModalContainer extends Component {
     }
   }
 
-  hidePassword=(e)=>{
-    e.preventDefault();
-    e.stopPropagation();
-    this.props.dispatch({
-      type:'HIDE_PASSWORD'
-    })
-  }
 
   signIn=()=>{
     this.props.dispatch({
@@ -49,6 +43,7 @@ class ModalContainer extends Component {
     })
   }
 
+  
   render() {
     return(
       // <Modal 
@@ -61,47 +56,18 @@ class ModalContainer extends Component {
       // /> 
 
       <div className="modal" ref={this.setWrapperRef}>
-      <nav className='navModal'>
-        <ul className='loginSignup' >
-        <li className='loginmodal' style={this.login ? {backgroundColor:'#ffffff'}:{backgroundColor:'#d2d8d8'}}>
-          <a  href="#0" onClick={this.signIn}>Login</a>
+        <nav className='navModal'>
+          <ul className='loginSignup' >
+          <li className='loginmodal' style={this.login ? {backgroundColor:'#ffffff'}:{backgroundColor:'#d2d8d8'}}>
+            <a  href="#0" onClick={this.signIn}>Login</a>
           </li>
           <li className='signUp' style={this.login ? {backgroundColor:'#d2d8d8'}:{backgroundColor:'#ffffff'}}>
-          <a href="#0" onClick={this.signUp} >SignUp</a>
+            <a href="#0" onClick={this.signUp} >SignUp</a>
           </li>
-        </ul>
-      </nav>
-      {
-        !this.login &&
-        <form className='signupForm'> 
-          <label className=' image-replace cd-username'htmlFor='signup-username'>Usuario</label>
-          <input className='Username' type='text' placeholder='Usuario' id='signup-username'></input>
-          <label className=' image-replace cd-email'htmlFor='signup-email'>Email</label>
-          <input className='Email' type='email' placeholder='Email' id='signup-email'></input>
-          <label className=' image-replace cd-password'htmlFor='signup-password'>Password</label>
-       
-          <input className='password' type={this.hide ? "password":"true"} placeholder='Contraseña' id='signup-password'></input>
-          <a href="#0" className='hidePassword' onClick={this.hidePassword}>{!this.hide ? "Ocultar": "Mostrar"}</a>
-          <input type='checkbox' id='accept-terms'></input>
-          <label className='accept-terms' htmlFor='accept-terms'>Estoy de acuerdo con los <a href='#0' className='terms'>términos</a></label>
-          <input type='submit'value='Crear Cuenta' className='butCreateAcc'></input>
-      </form>
-      }
-
-      {
-        this.login &&
-        <form className='signinForm'> 
-          <label className=' image-replace cd-email-login'htmlFor='signin-email'>Email</label>
-          <input className='Email-login' type='email' placeholder='Email' id='signin-email'></input>
-          <label className=' image-replace cd-password-login'htmlFor='signin-password'>Password</label>
-       
-          <input className='password-login' type={this.hide ? "password":"true"} placeholder='Contraseña' id='signin-password'></input>
-          <a href="#0" className='hidePasswordLogin' onClick={this.hidePassword}>{!this.hide ? "Ocultar": "Mostrar"}</a>
-          <input type='checkbox' id='remember-me'></input>
-          <label className='rememberMe' htmlFor='remember-me'>Recuerdame</label>
-          <input type='submit'value='Ingresar' className='butCreateAcc'></input>
-      </form>
-      }
+          </ul>
+        </nav>
+      
+        <FormContainer/>
       </div>
 
     )

@@ -48,7 +48,9 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.1.5",
+    "body-parser": "^1.18.3",
     "express": "4.16.4",
+    "express-session": "^1.15.6",
     "immutable": "^4.0.0-rc.12",
     "prop-types": "15.6.2",
     "react": "^16.7.0",
