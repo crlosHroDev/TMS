@@ -15,6 +15,12 @@ class FormContainer extends Component {
           type:'HIDE_PASSWORD'
         })
       }
+
+      handleSubmit=(e)=>{
+          e.preventDefault()
+
+          this
+      }
     
     render(){
         return(
