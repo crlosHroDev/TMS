@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import ReactDOM from 'react-dom'
 import {connect} from 'react-redux';
-import Modal from '../components/modal';
+import Register from '../../'
 import FormContainer from '../../Forms/containers/Form';
 
 class ModalContainer extends Component { 
@@ -46,14 +45,6 @@ class ModalContainer extends Component {
   
   render() {
     return(
-      // <Modal 
-      // hideModal={this.hideModal} 
-      // hidePassword={this.hidePassword} 
-      // hide={this.props.hide} 
-      // login={this.props.login}
-      // signIn={this.signIn} 
-      // signUp={this.signUp}
-      // /> 
 
       <div className="modal" ref={this.setWrapperRef}>
         <nav className='navModal'>

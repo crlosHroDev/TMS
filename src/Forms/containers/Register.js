@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {connect} from 'react-redux';
 
 
 class Register extends Component {
@@ -28,4 +29,13 @@ class Register extends Component {
 
 }
 
-export default Register;
+function mapStateToProps(state,props){
+  return{
+    modalVisible:state.get('modal').get('modalVisible'),
+    hide:state.get('modal').get('hide'),
+    login:state.get('modal').get('login'),
+    signUpActive:state.get('modal').get('signUpActive')
+  }
+}
+
+export default connect(mapStateToProps)(Register);
