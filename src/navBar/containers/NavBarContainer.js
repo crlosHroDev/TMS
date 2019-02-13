@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import NavBar from '../components/NavBar';
 import {connect} from 'react-redux'; 
-import actions  from '../../actions/index';
 
 
 class NavBarContainer extends Component {

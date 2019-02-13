@@ -15,7 +15,6 @@ router.use(
     })
 )
 
-var Users=[]
 router.get('/',(req,res)=>{
     const html=reactDomServer.renderToString(
     <StaticRouter
