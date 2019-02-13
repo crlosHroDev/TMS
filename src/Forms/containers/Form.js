@@ -1,6 +1,6 @@
 import React,{Component,Fragment} from 'react';
 import {connect} from 'react-redux';
-import FormSignUp from '../components/FormSignUp';
+import Register from './Register';
 import FormSignIn from '../components/FormSignIn';
 
 class FormContainer extends Component {
@@ -27,7 +27,7 @@ class FormContainer extends Component {
             <Fragment>
                 {
                     !this.props.login &&
-                    <FormSignUp
+                    <Register
                         hide={this.props.hide}
                         hidePassword={this.hidePassword}
                     />
