@@ -8,12 +8,24 @@ class ModalContainer extends Component {
     this.setWrapperRef = this.setWrapperRef.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
   }
+
+  previousLocation=this.props.location
   componentDidMount(){
     document.addEventListener("click",this.handleClickOutside)
   }
   
   componentWillUnmount(){
     document.removeEventListener("click", this.handleClickOutside)
+  }
+
+  componentWillUpdate(nextProps){
+    const {location}=this.props
+    if(
+      nextProps.history.action!=="POP" &&
+      (!location.state || !location.state.get('modal'))
+    ){
+      this.previousLocation=this.props.location
+    }
   }
 
   setWrapperRef = node => {
@@ -48,11 +60,11 @@ class ModalContainer extends Component {
       <div className="modal" ref={this.setWrapperRef}>
         <nav className='navModal'>
           <ul className='loginSignup' >
-          <li className='loginmodal' style={this.login ? {backgroundColor:'#ffffff'}:{backgroundColor:'#d2d8d8'}}>
-            <a  href="#0" onClick={this.signIn}>Login</a>
+          <li className='loginmodal' style={this.props.login ? {backgroundColor:'#ffffff'}:{backgroundColor:'#d2d8d8'}}>
+            <a  href="#" onClick={this.signIn}>Login</a>
           </li>
-          <li className='signUp' style={this.login ? {backgroundColor:'#d2d8d8'}:{backgroundColor:'#ffffff'}}>
-            <a href="#0" onClick={this.signUp} >SignUp</a>
+          <li className='signUp' style={this.props.login ? {backgroundColor:'#d2d8d8'}:{backgroundColor:'#ffffff'}}>
+            <a href="#" onClick={this.signUp} >SignUp</a>
           </li>
           </ul>
         </nav>

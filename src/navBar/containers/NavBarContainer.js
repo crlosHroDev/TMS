@@ -4,14 +4,16 @@ import {connect} from 'react-redux';
 
 
 class NavBarContainer extends Component {
+
     showModal=()=>{
         this.props.dispatch({
             type:'OPEN_MODAL',
         })
     }
+
     render(){
         return(
-            <NavBar showModal={this.showModal}/>
+            <NavBar showModal={this.showModal} />
         )
     }
 }
