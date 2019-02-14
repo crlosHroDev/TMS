@@ -3,21 +3,44 @@ import {connect} from 'react-redux';
 
 
 class Register extends Component {
-  constructor(props){
-    super(props)
-}
+    constructor(props){
+      super(props)
+      this.hidePassword=props.hidePassword
+      this.state={
+        username:'',
+        email:'',
+        password:'',
+        errors:{}
+      }
+      this.handleInputChange=this.handleInputChange.bind(this)
+      this.handleSubmit=this.handleSubmit.bind(this)
+
+    }
+    handleInputChange=(e)=>{
+      this.setState({
+        [e.target.name]:e.target.value
+      })
+    }
+    handleSubmit=(e)=>{
+      e.preventDefault()
+      const user={
+        username:this.state.username,
+        email:this.state.email,
+        password:this.state.password
+      }
+      console.log(user)
+    }
 
     render(){
       return(
-          <form className='signupForm' action='/' method='POST'> 
+          <form className='signupForm' onSubmit={this.handleSubmit}> 
             <label className=' image-replace cd-username'htmlFor='signup-username'>Usuario</label>
-            <input className='Username' type='text' placeholder='Usuario' id='signup-username' name='username'></input>
+            <input className='Username' type='text' placeholder='Usuario' id='signup-username' name='username' onChange={this.handleInputChange} value={this.state.username}></input>
             <label className=' image-replace cd-email'htmlFor='signup-email'>Email</label>
-            <input className='Email' type='email' placeholder='Email' id='signup-email' name='email'></input>
+            <input className='Email' type='email' placeholder='Email' id='signup-email' name='email' onChange={this.handleInputChange} value={this.state.email}></input>
             <label className=' image-replace cd-password'htmlFor='signup-password'>Password</label>
-         
-            <input className='password' type={props.hide ? "password":"true"} placeholder='Contraseña' id='signup-password' name='password'></input>
-            <a href="#0" className='hidePassword' onClick={props.hidePassword}>{!props.hide ? "Ocultar": "Mostrar"}</a>
+            <input className='password' type={this.props.hide ? "password":"true"} placeholder='Contraseña' id='signup-password' name='password' onChange={this.handleInputChange} value={this.state.password}></input>
+            <a href="#0" className='hidePassword' onClick={this.hidePassword}>{!this.props.hide ? "Ocultar": "Mostrar"}</a>
             <input type='checkbox' id='accept-terms'></input>
             <label className='accept-terms' htmlFor='accept-terms'>Estoy de acuerdo con los <a href='#0' className='terms'>términos</a></label>
             <input type='submit'value='Crear Cuenta' className='butCreateAcc'></input>

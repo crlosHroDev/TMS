@@ -7,6 +7,7 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 import logger from 'redux-logger';
 import Home from './home.js';
 import Services from './services.js';
+import Register from '../../Forms/containers/Register';
 import TMS from './tms.js';
 import NavBarContainer from '../../navBar/containers/NavBarContainer';
 import reducer from '../../reducers/index';
@@ -30,6 +31,7 @@ class App extends Component{
                     <Switch>
                     <Route exact path='/' component={Home}/>
                     <Route exact path='/servicios' component={Services}/>
+                    <Route exact path='/registro' component={Register}/>
                     <Route exact path='/login' component={TMS}/>
                     </Switch>
                 </Fragment>

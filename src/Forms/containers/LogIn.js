@@ -4,17 +4,38 @@ import {connect} from 'react-redux';
 class LogIn extends Component{
     constructor(props){
       super(props)
+      this.state={
+        email:'',
+        password:'',
+        errors:{}
+      }
+      this.handleInputChange=this.handleInputChange.bind(this)
+      this.handleSubmit=this.handleSubmit.bind(this)
+      this.hidePassword=props.hidePassword
     }
 
+    handleInputChange=(e)=>{
+      this.setState({
+        [e.target.name]:e.target.value
+      })
+    }
+
+    handleSubmit=(e)=>{
+      e.preventDefault()
+      const user={
+        email:this.state.email,
+        password:this.state.password
+      }
+    }
     render(){
       return(
-          <form className='signinForm' action='/' method='POST'> 
+          <form className='signinForm' onSubmit={this.onSubmit}> 
             <label className=' image-replace cd-email-login'htmlFor='signin-email'>Email</label>
-            <input className='Email-login' type='email' placeholder='Email' id='signin-email'name='email'></input>
+            <input className='Email-login' type='email' placeholder='Email' id='signin-email'name='email'onChange={this.handleInputChange} value={this.state.email}></input>
             <label className=' image-replace cd-password-login'htmlFor='signin-password'>Password</label>
          
-            <input className='password-login' type={props.hide ? "password":"true"} placeholder='Contraseña' id='signin-password' name='password'></input>
-            <a href="#0" className='hidePasswordLogin' onClick={props.hidePassword}>{!props.hide ? "Ocultar": "Mostrar"}</a>
+            <input className='password-login' type={this.props.hide ? "password":"true"} placeholder='Contraseña' id='signin-password' name='password' onChange={this.handleInputChange} value={this.state.password}></input>
+            <a href="#0" className='hidePasswordLogin' onClick={this.hidePassword}>{!this.props.hide ? "Ocultar": "Mostrar"}</a>
             <input type='checkbox' id='remember-me'></input>
             <label className='rememberMe' htmlFor='remember-me'>Recuerdame</label>
             <input type='submit'value='Ingresar' className='butCreateAcc'></input>

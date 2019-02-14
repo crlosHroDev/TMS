@@ -7,7 +7,6 @@ class FormContainer extends Component {
     constructor(props){
         super(props)
     }
-
     hidePassword=(e)=>{
         e.preventDefault();
         e.stopPropagation();
@@ -15,6 +14,7 @@ class FormContainer extends Component {
           type:'HIDE_PASSWORD'
         })
       }
+    
 
       handleSubmit=(e)=>{
           e.preventDefault()
@@ -28,14 +28,12 @@ class FormContainer extends Component {
                 {
                     !this.props.login &&
                     <Register
-                        hide={this.props.hide}
                         hidePassword={this.hidePassword}
                     />
                 }          
                 {
                     this.props.login &&
                     <LogIn
-                        hide={this.props.hide}
                         hidePassword={this.hidePassword}
                     />
                 }

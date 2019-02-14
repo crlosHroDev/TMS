@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux';
-import Register from '../../'
 import FormContainer from '../../Forms/containers/Form';
 
 class ModalContainer extends Component { 

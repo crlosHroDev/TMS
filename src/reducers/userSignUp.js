@@ -17,4 +17,4 @@ function userSignUp(state=initialState,action){
     }
 }
 
-export default userSignUp
+export default userSignUp;
