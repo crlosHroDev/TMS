@@ -1,5 +1,5 @@
-export const config={
-    DB:'mongoddb://localhost:27017/auth',
+module.exports ={
+    DB:'mongoddb://localhost:27017/HRLogis',
     DB_NAME:'HRLogis'
 }
 

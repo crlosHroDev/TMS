@@ -17,7 +17,7 @@ require('./passport')(passport)
 
 //Middlewares
 app.use(bodyParser.urlencoded({extended:false}))
-app.use(bodyParser,json())
+app.use(bodyParser.json())
 
 app.use(express.static('dist'));
 app.use('/images',express.static('images'))
