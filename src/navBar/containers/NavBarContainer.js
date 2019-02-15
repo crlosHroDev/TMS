@@ -13,7 +13,7 @@ class NavBarContainer extends Component {
 
     render(){
         return(
-            <NavBar showModal={this.showModal} />
+            <NavBar showModal={this.showModal} modalVisible={this.props.modalVisible}/>
         )
     }
 }

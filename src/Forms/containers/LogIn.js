@@ -35,7 +35,7 @@ class LogIn extends Component{
             <label className=' image-replace cd-password-login'htmlFor='signin-password'>Password</label>
          
             <input className='password-login' type={this.props.hide ? "password":"true"} placeholder='Contraseña' id='signin-password' name='password' onChange={this.handleInputChange} value={this.state.password}></input>
-            <a href="#0" className='hidePasswordLogin' onClick={this.hidePassword}>{!this.props.hide ? "Ocultar": "Mostrar"}</a>
+            <a href="#" className='hidePasswordLogin' onClick={this.hidePassword}>{!this.props.hide ? "Ocultar": "Mostrar"}</a>
             <input type='checkbox' id='remember-me'></input>
             <label className='rememberMe' htmlFor='remember-me'>Recuerdame</label>
             <input type='submit'value='Ingresar' className='butCreateAcc'></input>

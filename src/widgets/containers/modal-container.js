@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import FormContainer from '../../Forms/containers/Form';
 
 class ModalContainer extends Component { 
@@ -9,7 +10,6 @@ class ModalContainer extends Component {
     this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
-  previousLocation=this.props.location
   componentDidMount(){
     document.addEventListener("click",this.handleClickOutside)
   }
@@ -18,15 +18,6 @@ class ModalContainer extends Component {
     document.removeEventListener("click", this.handleClickOutside)
   }
 
-  componentWillUpdate(nextProps){
-    const {location}=this.props
-    if(
-      nextProps.history.action!=="POP" &&
-      (!location.state || !location.state.get('modal'))
-    ){
-      this.previousLocation=this.props.location
-    }
-  }
 
   setWrapperRef = node => {
     this.wrapperRef = node;
@@ -37,6 +28,7 @@ class ModalContainer extends Component {
       this.props.dispatch({
         type: "CLOSE_MODAL" 
       });
+      history.replaceState({},null,'/')
     }
   }
 
@@ -55,16 +47,29 @@ class ModalContainer extends Component {
 
   
   render() {
+
     return(
 
       <div className="modal" ref={this.setWrapperRef}>
         <nav className='navModal'>
           <ul className='loginSignup' >
           <li className='loginmodal' style={this.props.login ? {backgroundColor:'#ffffff'}:{backgroundColor:'#d2d8d8'}}>
-            <a  href="#" onClick={this.signIn}>Login</a>
+            {/* <a  href="#" onClick={this.signIn}>Login</a> */}
+            <Link to={{
+              pathname:'/ingreso',
+              // state:this.signIn
+            }}
+            onClick={this.signIn}
+            >Login</Link>
           </li>
           <li className='signUp' style={this.props.login ? {backgroundColor:'#d2d8d8'}:{backgroundColor:'#ffffff'}}>
-            <a href="#" onClick={this.signUp} >SignUp</a>
+            {/* <a href="#" onClick={this.signUp} >SignUp</a> */}
+            <Link to={{
+              pathname:'/registro',
+              // state:this.signUp
+            }}
+            onClick={this.signUp}
+            >SignUp</Link>
           </li>
           </ul>
         </nav>

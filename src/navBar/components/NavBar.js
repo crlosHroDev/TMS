@@ -36,7 +36,12 @@ function NavBar(props) {
         <div className="login" onClick={props.showModal}>
           <img src="https://img.icons8.com/bubbles/50/000000/gender-neutral-user.png" />
           <li>
-            <a href="#">Registrarme/Iniciar Sesión</a>
+            <Link
+              to={{
+                pathname:'/registro',
+                state:props.modalVisible
+              }}
+            >Registrarme/Iniciar Sesión</Link>
           </li>
         </div>
       </ul>

@@ -20,20 +20,37 @@ const store=createStore(
         applyMiddleware(logger)
     )
 )
-console.log(store.getState())
 
 class App extends Component{
 
+    previousLocation=this.props.location
+    
+    // componentWillUpdate(nextProps){
+    //     const {location}=this.props
+
+    //     if(
+    //         nextProps.history.action !=="POP" &&
+    //         (!location.state || !location.state.modal)
+    //     ){
+    //         this.previousLocation=this.props.location
+    //     }
+    // }
     render(){
+        // const {location} =this.props
+        // const isModal=!!(
+        //     location.state &&
+        //     location.state.modal &&
+        //     this.previousLocation !==location
+        // )
         return(
             <Provider store={store}>
                 <Fragment>
                     <NavBarContainer/>
-                    <Switch>
+                    <Switch > 
                         <Route exact path='/' component={Home}/>
                         <Route exact path='/servicios' component={Services}/>
-                        <Route exact path='/registro' component={ModalContainer}/>
-                        <Route exact path='/ingreso' component={Login}/>
+                        <Route exact path='/registro' component={Home}/>
+                        <Route exact path='/ingreso' component={Home}/>
                         <Route exact path='/login' component={TMS}/>
                     </Switch>
                 </Fragment>
