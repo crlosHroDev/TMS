@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
+import propTypes from 'prop-types';
 import {connect} from 'react-redux';
+import {loginUser} from '../../actions/authentication';
 
 class LogIn extends Component{
     constructor(props){
@@ -26,6 +28,13 @@ class LogIn extends Component{
         email:this.state.email,
         password:this.state.password
       }
+      this.props.loginUser(user)
+    }
+
+    componentWillReceiveProps(nextProps){
+      this.setState({
+        errors:nextProps.errors
+      })
     }
     render(){
       return(
@@ -45,6 +54,10 @@ class LogIn extends Component{
     }
 }
 
+LogIn.propTypes={
+  errors:propTypes.object.isRequired
+}
+
 function mapStateToProps(state,props){
   return{
     modalVisible:state.get('modal').get('modalVisible'),
@@ -54,4 +67,4 @@ function mapStateToProps(state,props){
   }
 }
 
-export default connect(mapStateToProps)(LogIn);
+export default connect(mapStateToProps,{loginUser})(LogIn);

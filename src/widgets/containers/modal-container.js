@@ -29,6 +29,15 @@ class ModalContainer extends Component {
         type: "CLOSE_MODAL" 
       });
       history.replaceState({},null,'/')
+      if(this.props.login){
+        this.props.dispatch({
+          type:"SIGN_UP"
+        })
+      }else{
+        this.props.dispatch({
+          type:"LOGIN"
+        })
+      }
     }
   }
 

@@ -5,6 +5,7 @@ import {Provider} from 'react-redux';
 import {Map as map} from 'immutable';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import logger from 'redux-logger';
+import thunk from 'redux-thunk';
 import Home from './home.js';
 import Services from './services.js';
 import ModalContainer from '../../widgets/containers/modal-container';
@@ -17,7 +18,7 @@ const store=createStore(
     reducer,
     map(),
     composeWithDevTools(
-        applyMiddleware(logger)
+        applyMiddleware(thunk)
     )
 )
 

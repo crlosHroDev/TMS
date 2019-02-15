@@ -1,5 +1,5 @@
 const path = require("path");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const TerserPlugin  = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CleanWebPackPlugin = require("clean-webpack-plugin");
@@ -12,7 +12,7 @@ let config = {
     })
   ],
   optimization: {
-    minimizer: [new UglifyJsPlugin(), new OptimizeCSSAssetsPlugin({})]
+    minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin({})]
   },
   entry: {
     "app": path.resolve(__dirname, "src/pages/containers/app.js")
