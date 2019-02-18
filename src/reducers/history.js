@@ -1,4 +1,5 @@
 import {fromJS} from  'immutable';
+import {INCREMENT,DECREMENT} from '../actions/types';
 
 const initialState=fromJS({
     count:0,
@@ -6,9 +7,9 @@ const initialState=fromJS({
 
 function history(state=initialState,action){
     switch(action.type){
-        case 'INCREMENT':
+        case INCREMENT:
             return state.set('count',state.get('count')+1)
-        case 'DECREMENT':
+        case DECREMENT:
             return state.set('count',state.get('count')-1)  
         default:
             return state

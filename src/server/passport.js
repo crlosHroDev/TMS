@@ -1,14 +1,14 @@
 import {Strategy as JWTStrategy} from 'passport-jwt';
-import {ExtractJWT} from 'passport-jwt'
+import {ExtractJwt} from 'passport-jwt'
 import mongoose from 'mongoose';
 
 const User= mongoose.model('Users')
 const opts={}
 
-opts.jwtFromRequest=ExtractJWT.fromAuthHeaderAsBearerToken()
+opts.jwtFromRequest=ExtractJwt.fromAuthHeaderAsBearerToken()
 opts.secretOrKey='secret'
 
-export default (passport) =>{
+module.exports= (passport) =>{
     passport.use(new JWTStrategy(opts,function(jwt_payload,done){
         User.findById(jwt_payload,id)
             .then(user=>{

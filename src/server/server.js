@@ -12,7 +12,7 @@ mongoose.connect(config.DB,{useNewUrlParser:true}).then(
 )
 
 const app=express()
-app.use(passport.initialize)
+app.use(passport.initialize())
 require('./passport')(passport)
 
 //Middlewares

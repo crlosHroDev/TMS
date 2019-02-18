@@ -3,7 +3,7 @@ import React from 'react';
 import {StaticRouter} from 'react-router';
 import reactDomServer from 'react-dom/server';
 import session from 'express-session';
-import App from '../../dist/ssr/app';
+import App from '../../../dist/ssr/app';
 
 const router=express.Router();
 
@@ -19,6 +19,9 @@ router.get('/',(req,res)=>{
     const html=reactDomServer.renderToString(
     <StaticRouter
         location={req.url}
+        context={{
+            name:'HRLogis'
+        }}
     >
         <App/>
     </StaticRouter>

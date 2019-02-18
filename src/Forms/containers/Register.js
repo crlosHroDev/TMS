@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import propTypes from 'prop-types';
-import {registerUser} from '../../actions/authentication';
+import {registerUser} from '../../actions/index';
 
 
 class Register extends Component {
@@ -42,6 +42,12 @@ class Register extends Component {
       }
     }
 
+    componentDidMount(){
+      if(this.props.isAuthenticated){
+        this.props.history.push('/')
+      }
+    }
+
     render(){
       return(
           <form className='signupForm' onSubmit={this.handleSubmit}> 
@@ -73,7 +79,9 @@ function mapStateToProps(state,props){
     hide:state.get('modal').get('hide'),
     login:state.get('modal').get('login'),
     signUpActive:state.get('modal').get('signUpActive'),
-    errors:state.get('errors')
+    errors:state.get('errors'),
+    isAuthenticated:state.get('auth').get('isAuthenticated'),
+    user:state.get('auth').get('user')
   }
 }
 

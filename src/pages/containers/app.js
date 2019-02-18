@@ -1,15 +1,15 @@
 import React,{Fragment,Component} from 'react';
 import {Route,Switch} from 'react-router-dom';
-import {createStore,applyMiddleware, compose} from 'redux';
+import {createStore,applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import {Map as map} from 'immutable';
 import {composeWithDevTools} from 'redux-devtools-extension';
-import logger from 'redux-logger';
+import jwt_decode from 'jwt-decode';
 import thunk from 'redux-thunk';
 import Home from './home.js';
 import Services from './services.js';
-import ModalContainer from '../../widgets/containers/modal-container';
-import Login from '../../Forms/containers/LogIn';
+import setAuthToken from '../../setAuthToken';
+import {setCurrentUser,logoutUser} from '../../actions/index';
 import TMS from './tms.js';
 import NavBarContainer from '../../navBar/containers/NavBarContainer';
 import reducer from '../../reducers/index';
@@ -21,7 +21,20 @@ const store=createStore(
         applyMiddleware(thunk)
     )
 )
-
+var isNode=typeof module !== 'undefined'
+if(!isNode){
+    if(localStorage.jwtToken){
+        setAuthToken(localStorage.jwtToken)
+        const decoded=jwt_decode(localStorage.jwtToken)
+        store.dispatch(setCurrentUser(decoded))
+    
+        const currentTime=Date.now()/1000
+        if(decoded.exp<currentTime){
+            store.dispatch(logoutUser())
+            window.location.href='/login'
+        }
+    }
+}
 class App extends Component{
 
     previousLocation=this.props.location
@@ -52,7 +65,6 @@ class App extends Component{
                         <Route exact path='/servicios' component={Services}/>
                         <Route exact path='/registro' component={Home}/>
                         <Route exact path='/ingreso' component={Home}/>
-                        <Route exact path='/login' component={TMS}/>
                     </Switch>
                 </Fragment>
             </Provider>

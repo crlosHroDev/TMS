@@ -1,12 +1,11 @@
-const express =require ('express');
-const mongoose =require ('mongoose');
+import express from 'express';
+import mongoose from 'mongoose';
 
-const bodyParser =require ('body-parser');
-const config =require ('./config/index')
-
+import bodyParser from 'body-parser';
+import config from './config/index';
 mongoose.connect(config.DB,{useNewUrlParser:true}).then(
     ()=>{console.log('Database is connected')},
-    err=>{console.log('Can not connect to the database'+err)}
+    err=>{console.log('Can not connect to the database '+err)}
 )
 
 const app=express()
@@ -17,3 +16,6 @@ app.use(bodyParser.json())
 app.get('/',(req,res)=>{
     res.send('hello')
 })
+
+app.listen(3000)
+console.log('el server prendió en el puerto 3000')

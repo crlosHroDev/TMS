@@ -1,7 +1,8 @@
 import React,{Component} from 'react';
 import propTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {loginUser} from '../../actions/authentication';
+import {withRouter} from 'react-router-dom';
+import {loginUser} from '../../actions/index';
 
 class LogIn extends Component{
     constructor(props){
@@ -36,9 +37,15 @@ class LogIn extends Component{
         errors:nextProps.errors
       })
     }
+
+    componentDidMount(){
+      if(this.props.isAuthenticated){
+        this.props.history.push('/')
+      }
+    }
     render(){
       return(
-          <form className='signinForm' onSubmit={this.onSubmit}> 
+          <form className='signinForm' onSubmit={this.handleSubmit}> 
             <label className=' image-replace cd-email-login'htmlFor='signin-email'>Email</label>
             <input className='Email-login' type='email' placeholder='Email' id='signin-email'name='email'onChange={this.handleInputChange} value={this.state.email}></input>
             <label className=' image-replace cd-password-login'htmlFor='signin-password'>Password</label>
@@ -54,17 +61,17 @@ class LogIn extends Component{
     }
 }
 
-LogIn.propTypes={
-  errors:propTypes.object.isRequired
-}
 
 function mapStateToProps(state,props){
   return{
     modalVisible:state.get('modal').get('modalVisible'),
     hide:state.get('modal').get('hide'),
     login:state.get('modal').get('login'),
-    signUpActive:state.get('modal').get('signUpActive')
+    signUpActive:state.get('modal').get('signUpActive'),
+    errors:state.get('errors'),
+    isAuthenticated:state.get('auth').get('isAuthenticated'),
+    user:state.get('auth').get('user')
   }
 }
 
-export default connect(mapStateToProps,{loginUser})(LogIn);
+export default connect(mapStateToProps,{loginUser})(withRouter(LogIn));
