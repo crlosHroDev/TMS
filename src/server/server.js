@@ -4,13 +4,20 @@ import passport from 'passport';
 import bodyParser from 'body-parser';
 import home from './routes/home';
 import users from './routes/user';
-import config from './config/index'
+import config from './config/index';
 
-mongoose.connect(config.DB,{useNewUrlParser:true}).then(
-    ()=>{console.log('Database is connected')},
-    err=>{console.log('Can not connect to the database'+err)}
-)
+// const USER=encodeURIComponent(config.dbUser)
+// const PASSWORD=encodeURIComponent(config.dbPassword)
+// const DB_NAME=config.dbName
 
+// const MONGO_URI=`mongodb://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${DB_NAME}`
+
+// mongoose.connect(MONGO_URI,{useNewUrlParser:true}).then(
+//     ()=>{console.log('Database is connected')},
+//     err=>{console.log('Can not connect to the database'+err)}
+// )
+
+console.log(config.dbName)
 const app=express()
 app.use(passport.initialize())
 require('./passport')(passport)
