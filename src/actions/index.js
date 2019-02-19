@@ -11,10 +11,15 @@ export const openModal=()=>{
     }
 }
 
+export const closeModal=()=>{
+    return{
+        type:CLOSE_MODAL
+    }
+}
 
 export const registerUser=(user,history)=>dispatch=>{
-    axios.post('/api/users/register',user)
-        .then(res=>history.push('/login'))
+    axios.post('/api/users/registro',user)
+        .then(res=>history.push('/ingreso'))
         .catch(err=>{
             dispatch({
                 type:GET_ERRORS,
@@ -24,13 +29,14 @@ export const registerUser=(user,history)=>dispatch=>{
 }
 
 export const loginUser=(user)=>dispatch=>{
-    axios.post('/api/users/login',user)
+    axios.post('/api/users/ingreso',user)
         .then(res=>{
             const {token}=res.data
             localStorage.setItem('jwtToken',token)
             setAuthToken(token)
             const decoded=jwt_decode(token)
             dispatch(setCurrentUser(decoded))
+            dispatch(closeModal())
         })
         .catch(err=>{
             dispatch({
@@ -51,6 +57,6 @@ export const setCurrentUser=decoded =>{
 export const logoutUser=(history)=>dispatch=>{
         localStorage.removeItem('jwtToken')
         setAuthToken(false)
-        dispatch(setCurrentUser(map()))
-        history.push('/login')
+        dispatch(setCurrentUser({}))
+        history.push('/ingreso')
 }

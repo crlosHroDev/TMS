@@ -1,0 +1,26 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "cwd":"${workspaceRoot}",
+            "sourceMaps": true,
+            "preLaunchTask": "npm: build:server",
+            "program": "${workspaceRoot}/dist/ssr/app",
+            "args":[
+                "increment",
+                "3"
+            ],
+            "stopOnEntry": false,
+            "localRoot": "${workspaceRoot}",
+            "outFiles": [
+                "${workspaceRoot}/dist/ssr/**"
+            ]
+        }
+    ]
+}

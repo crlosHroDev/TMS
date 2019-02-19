@@ -5,14 +5,16 @@ import jwt from 'jsonwebtoken';
 import passport from 'passport';
 import validateRegisterInput from '../validation/register';
 import validateLoginInput from '../validation/login';
-import User from '../lib/mongo';
+import User from '../lib/schema';
 
 const router=express.Router()
 
 router.post('/registro',function(req,res){
-
     const {errors,isValid}=validateRegisterInput(req.body)
-
+    console.log("error "+errors)
+    console.log("isValid "+isValid)
+    console.log("request body " +req.body)
+    
     if(!isValid){
         return res.status(400).json(errors)
     }
@@ -81,7 +83,7 @@ router.post('/ingreso',(req,res)=>{
                     if(isMatch){
                         const payload={
                             id:user.id,
-                            name:user.name,
+                            username:user.username,
                             avatar:user.avatar
                     }
                         jwt.sign(payload,'secret',{

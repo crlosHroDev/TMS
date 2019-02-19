@@ -5,14 +5,14 @@ function validateRegisterInput(data){
     let errors={}
     data.username=!isEmpty(data.username) ? data.username: ''
     data.email=!isEmpty(data.email) ? data.email:''
-    data.password=!isEmpty(data.password) ? data.email:''
-
-    if(!Validator.isLength(data.name,{min:2,max:30})){
-        errors.name='Nombre debe tener entre 2 y 30 letras'
+    data.password=!isEmpty(data.password) ? data.password:''
+    console.log(data.email)
+    if(!Validator.isLength(data.username,{min:2,max:30})){
+        errors.username='Nombre debe tener entre 2 y 30 letras'
     }
 
     if(Validator.isEmpty(data.username)){
-        errors.name='El nombre es requerido '
+        errors.username='El nombre es requerido '
     }
 
     if(!Validator.isEmail(data.email)){

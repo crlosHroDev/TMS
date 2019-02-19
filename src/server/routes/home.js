@@ -9,7 +9,7 @@ const router=express.Router();
 
 router.use(
     session({
-        secret:'Hola',
+        secret:'secret',
         resave:false,
         saveUninitialized:false
     })

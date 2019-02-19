@@ -1,8 +1,8 @@
 import React,{Component} from 'react';
-import propTypes from 'prop-types';
+import {bindActionCreators}from 'redux';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import {loginUser} from '../../actions/index';
+import * as actions from '../../actions/index';
 
 class LogIn extends Component{
     constructor(props){
@@ -14,7 +14,7 @@ class LogIn extends Component{
       }
       this.handleInputChange=this.handleInputChange.bind(this)
       this.handleSubmit=this.handleSubmit.bind(this)
-      this.hidePassword=props.hidePassword
+      // this.hidePassword=props.hidePassword
     }
 
     handleInputChange=(e)=>{
@@ -29,8 +29,9 @@ class LogIn extends Component{
         email:this.state.email,
         password:this.state.password
       }
-      this.props.loginUser(user)
+      this.props.actions.loginUser(user)
     }
+
 
     componentWillReceiveProps(nextProps){
       this.setState({
@@ -74,4 +75,10 @@ function mapStateToProps(state,props){
   }
 }
 
-export default connect(mapStateToProps,{loginUser})(withRouter(LogIn));
+function mapDispatchToProps(dispatch){
+  return{
+      actions:bindActionCreators(actions,dispatch)
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(withRouter(LogIn));
