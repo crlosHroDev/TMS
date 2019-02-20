@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 import "./NavBar.css";
-import logo from "../../images/logo.jpg";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import truckLogo from "../../images/truck_logo.png";
 
 function NavBar(props) {
@@ -34,7 +34,8 @@ function NavBar(props) {
           <Link to="/contacto">Trabaja con Nosotros!</Link>
         </li>
         <div className="login" onClick={props.showModal}>
-          <img src="https://img.icons8.com/bubbles/50/000000/gender-neutral-user.png" />
+          {/* <img src="https://img.icons8.com/bubbles/50/000000/gender-neutral-user.png" /> */}
+            <FontAwesomeIcon icon="sign-in-alt" size="2x" color='#48664A' />
           <li>
             {props.isAuthenticated ?
               <a href="#" onClick={props.onLogout}>Logout</a>

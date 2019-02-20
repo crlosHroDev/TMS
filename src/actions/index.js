@@ -2,7 +2,7 @@ import axios from 'axios';
 import setAuthToken from '../setAuthToken';
 import jwt_decode from 'jwt-decode';
 import {Map as map} from 'immutable';
-import {OPEN_MODAL,CLOSE_MODAL,HIDE_PASSWORD,LOGIN,SIGN_UP,INCREMENT,DECREMENT,GET_ERRORS, SET_CURRENT_USER} from './types';
+import {OPEN_MODAL,CLOSE_MODAL,HIDE_PASSWORD,LOGIN,SIGN_UP,INCREMENT,DECREMENT,GET_ERRORS, SET_CURRENT_USER,REMOVE_CURRENT_USER} from './types';
 
 
 export const openModal=()=>{
@@ -28,7 +28,7 @@ export const registerUser=(user,history)=>dispatch=>{
         })
 }
 
-export const loginUser=(user)=>dispatch=>{
+export const loginUser=(user,history)=>dispatch=>{
     axios.post('/api/users/ingreso',user)
         .then(res=>{
             const {token}=res.data
@@ -37,6 +37,7 @@ export const loginUser=(user)=>dispatch=>{
             const decoded=jwt_decode(token)
             dispatch(setCurrentUser(decoded))
             dispatch(closeModal())
+            history.push('/')
         })
         .catch(err=>{
             dispatch({
@@ -53,10 +54,22 @@ export const setCurrentUser=decoded =>{
     }
 }
 
+export const removeCurrentUser=(decoded)=>{
+    return{
+        type:REMOVE_CURRENT_USER,
+        payload:decoded
+    }
+}
 
 export const logoutUser=(history)=>dispatch=>{
         localStorage.removeItem('jwtToken')
         setAuthToken(false)
-        dispatch(setCurrentUser({}))
+        const decoded={}
+        dispatch(removeCurrentUser(decoded))
         history.push('/ingreso')
 }
+
+// export const dashBoard=()=>{
+//     axios.get('/dashboard')
+//         .then(res=>{})
+// }

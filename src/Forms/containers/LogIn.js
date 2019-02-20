@@ -14,7 +14,7 @@ class LogIn extends Component{
       }
       this.handleInputChange=this.handleInputChange.bind(this)
       this.handleSubmit=this.handleSubmit.bind(this)
-      // this.hidePassword=props.hidePassword
+      this.hidePassword=props.hidePassword
     }
 
     handleInputChange=(e)=>{
@@ -29,7 +29,7 @@ class LogIn extends Component{
         email:this.state.email,
         password:this.state.password
       }
-      this.props.actions.loginUser(user)
+      this.props.actions.loginUser(user,this.props.history)
     }
 
 

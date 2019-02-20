@@ -7,7 +7,9 @@ li {
   list-style: none;
 }
 .navBar {
-  background-image: url('../../images/blueBackground.jpg');
+  /* background-image: url('../../images/blueBackground.jpg'); */
+  background-color: #A4BEA6;
+
 }
 
 .logo {
@@ -44,7 +46,8 @@ li {
   flex-direction: column;
   position: absolute;
   top: 10vh;
-  background-image: url('../../images/blueBackground.jpg');
+  /* background-image: url('../../images/blueBackground.jpg'); */
+  background-color: #7fbf90;
   margin: 0;
 }
 

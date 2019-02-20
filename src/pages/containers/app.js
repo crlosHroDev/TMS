@@ -6,11 +6,12 @@ import {Map as map} from 'immutable';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import jwt_decode from 'jwt-decode';
 import thunk from 'redux-thunk';
+import PrivateRoute from '../../helpers/privateRoute';
 import Home from './home.js';
 import Services from './services.js';
 import setAuthToken from '../../setAuthToken';
 import {setCurrentUser,logoutUser} from '../../actions/index';
-import TMS from './tms.js';
+import Dashboard from './Dashboard';
 import NavBarContainer from '../../navBar/containers/NavBarContainer';
 import reducer from '../../reducers/index';
 
@@ -65,6 +66,7 @@ class App extends Component{
                         <Route exact path='/servicios' component={Services}/>
                         <Route exact path='/registro' component={Home}/>
                         <Route exact path='/ingreso' component={Home}/>
+                        <PrivateRoute exact path='/dashboard' component={Dashboard}/>
                     </Switch>
                 </Fragment>
             </Provider>

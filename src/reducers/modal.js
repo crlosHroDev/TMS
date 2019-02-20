@@ -3,7 +3,7 @@ import {OPEN_MODAL,CLOSE_MODAL,HIDE_PASSWORD,LOGIN,SIGN_UP} from '../actions/typ
 
 const initialState=fromJS({
     modalVisible:false,
-    hide:false,
+    hide:true,
     login:false,
     signUpActive:true
 })

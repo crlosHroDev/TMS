@@ -15,7 +15,7 @@ router.use(
     })
 )
 
-router.get('/',(req,res)=>{
+router.get('*',(req,res)=>{
     const html=reactDomServer.renderToString(
     <StaticRouter
         location={req.url}
@@ -43,7 +43,7 @@ router.get('/',(req,res)=>{
       `)
 })
 
-router.post('/',(req,res)=>{
+router.post('*',(req,res)=>{
     if(!req.body.username||!req.body.email||!req.body.password){
         res.status('400')
         res.send('Invalid Details')

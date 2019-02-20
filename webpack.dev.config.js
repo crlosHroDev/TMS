@@ -10,7 +10,11 @@ module.exports={
     filename:'js/[name].js'
   },
   devServer:{
-    port:9000
+    port:9000,
+    proxy:[{
+      context:['/dashboard','/api'],
+      target:'http://localhost:3000'
+    }]
   },
   devtool:'eval-source-map',
   module:{
